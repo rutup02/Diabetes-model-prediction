@@ -42,9 +42,7 @@ def website():
 
     return render_template("website.html")
 
-# @app.route("/result")
-# def result():
-#     return  render_template("result.html")
+
 
 @app.route("/predict", methods = ['GET','POST'])
 
@@ -68,9 +66,7 @@ def predict():
         age = request.form.get('age')
         print(age)
 
-    # query_df = pd.DataFrame(json_)
-    # prediction = model.predict(query_df)
-    # return jsonify({"Prediction":list(prediction)})
+
     float_features = [prg,glc,bp,st,inl,bmi,dpf,age]
 
     print(float_features)
