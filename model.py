@@ -13,26 +13,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 
-# cursor = connection.cursor()
-
-# query = "SELECT * FROM table_name"
-# cursor.execute(query)
-# result = cursor.fetchall()
-# cursor.close()
-# connection.close()
-# df = pd.read_sql('SELECT * FROM diabetes.csv', con=connection)
-
-
-# df = pd.read_csv("diabetes.csv")
-# for x in df.columns:
-#     if x in ['Pregnancies','Age','Outcome']:
-#         continue
-#     df[x]=df[x].replace(0,df[x].mean())
-# df
-
-
-
-
 
 
 
