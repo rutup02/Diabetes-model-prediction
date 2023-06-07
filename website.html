@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        body {
+            background: linear-gradient(rgba(62, 62, 65, 0.7), rgba(13, 13, 14, 0.7)), url(../static/bgin.jpeg);
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-size: 100%;
+        }
+
+        .color {
+            color: rgb(222, 222, 230);
+        }
+
+        .bg-blur {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .note .col-auto {
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(62, 62, 65, 0.7);
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        .note .col-auto h5 {
+            text-decoration: double
+        }
+
+        .note .col-auto p {
+            font-size: 16px;
+        }
+
+        .d-grid a {
+            text-decoration: none;
+            text-align: end;
+            margin-top: 40px;
+            margin-left: -40px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container ">
+        <div class="bg-blur justify-content-center mt-3 position-relative">
+            <div class="row pt-3">
+                <div class="col">
+                    <div class="d-grid justify-content-center row color">
+                        <h1>Diabetes Prediction</h1>
+                        <a class="position-absolute color" href="#note">Note &darr;	</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col px-5">
+                    <div class="color ">
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <form action="/predict" method="post">
+                <div class="row justify-content-center py-4">
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="prg" name="prg" placeholder="name@example.com">
+                            <label for="floatingInput">Pregnancies:</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="glc" name="glc" placeholder="name@example.com">
+                            <label for="floatingInput">Glucose:</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="bp" name="bp" placeholder="name@example.com">
+                            <label for="floatingInput">BloodPressure:</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="st" name="st" placeholder="name@example.com">
+                            <label for="floatingInput">SkinThickness:</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="inl" name="inl" placeholder="name@example.com">
+                            <label for="floatingInput">Insulin:</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="bmi" name="bmi" placeholder="name@example.com">
+                            <label for="floatingInput">BMI:</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="dpf" name="dpf" placeholder="name@example.com">
+                            <label for="floatingInput">DiabetesPedigreeFunction:</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="age" name="age" placeholder="name@example.com">
+                            <label for="floatingInput">Age:</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center pb-3">
+                    <div class="col-auto">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+                <div class="row justify-content-center pb-3">
+                    <div class="col-auto">
+                        <h3 class="color">{{pred}}<h3>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="bg-blur my-5 position-relative" id="note">
+            <div class="mx-5 pb-3">
+                <div class="row pt-3">
+                    <div class="col">
+                        <h2 class="color">Note: </h2>
+                    </div>
+                </div>
+                <div class="row color mt-2 note">
+                    <div class="col-auto">
+                        <h5>For Pregnancies:</h5>
+                        <p>Indicate your gender male by entering "0". If you identify as female, <br>enter the number of times pregnant in numerical value only </p>
+                    </div>
+<!--                   Enter "0" if you are male and enter number of times pregnant if you are female. .-->
+<!--                    INDICATE YOUR GENDER MALE BY ENTERING "0", AND FEMALE BY ENTERING NUMBER OF TIMES  PRESENT.-->
+
+                    <div class="col-auto">
+
+                        <h5>For BloodPressure:</h5>
+                        <p> Enter Diastolic blood pressure (mm Hg)</p>
+                    </div>
+                    <div class="col-auto">
+
+                        <h5>For Glucose:</h5>
+                        <p> Enter Plasma glucose concentration a 2 hours in an oral glucose tolerance test</p>
+                    </div>
+                    <div class="col-auto">
+
+                        <h5>For BMI:</h5>
+                        <p> Enter Body mass index (weight in kg/(height in m)^2)</p>
+                    </div>
+                    <div class="col-auto">
+
+                        <h5>For SkinThickness:</h5>
+                        <p> Enter Triceps skin fold thickness (mm)</p>
+                    </div>
+                    <div class="col-auto">
+
+                        <h5>For Insulin:</h5>
+                        <p> Enter 2-Hour serum insulin (mu U/ml)</p>
+                    </div>
+
+                    <div class="col-auto">
+
+                        <h5>For DiabetesPedigreeFunction:</h5>
+                        <p>Enter Diabetes Pedigree Function</p>
+                    </div>
+                    <div class="col-auto">
+                        <h5>For Age:</h5>
+                        <p>Enter age in years only</p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>
+
+
+
+

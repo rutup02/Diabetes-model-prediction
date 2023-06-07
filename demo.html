@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page design</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(rgb(62, 59, 87, 0.7),rgb(55, 55, 56, 0.7)), url(../static/bg.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        .main_text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(243, 249, 253);
+        }
+        .main_text h1{
+            font-size: 50px;
+        }
+        .main_text .button{
+            text-decoration:  none;
+            display: block;
+            width: 140px;
+            height: 35px;
+            margin: 25px auto;
+            color: #fff;
+            line-height: 35px;
+            border:1px solid #fff;
+            text-align: center;
+        }
+        .button:hover{
+            background: #fff;
+            color: #000;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="main_text">
+        <h1>Diabetes Prediction Model</h1>
+        <a href="/website" class="button" onclick="window.location.href='website.html';">Check Now</a>
+
+    </div>
+    <!-- <button onclick="window.location.href='website.html';"></button> -->
+
+</body>
+</html>
+
+
+
